@@ -50,7 +50,7 @@ I opted not to because according to the scenario it is an MVP and when you're ti
 
 ## How would I extend this?
 
-While the requirements were an MVP, I built it on a solid foundation that is distributed (performant globally) and scales well (it's fine, 10 million users is not a problem) by default. Building on top of this base wouldn't be an issue, as there weren't any major shortcuts taken. However, a few things I would work on if I had more time and I knew I would be able to see it in production:
+While the requirements were an MVP, I built it on a solid foundation that is distributed (performant globally) and scales well (handles 10 million, no sweat) by default. Building on top of this base wouldn't be an issue, as there weren't any major shortcuts taken. However, a few things I would work on if I had more time and I knew I would be able to see it in production:
 
 1. Sentry for error logging/observability
 2. LogRocket for session replay
