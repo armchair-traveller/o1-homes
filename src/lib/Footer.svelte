@@ -12,9 +12,13 @@
               </a>
             </li>
 
-            <!-- TODO: Link to GH repo when done -->
             <li class="text-sm">
-              <a href="#" class="text-gray-500 hover:text-gray-600"> GitHub code </a>
+              <a
+                href="https://github.com/armchair-traveller/o1-homes/tree/frontend-mock"
+                class="text-gray-500 hover:text-gray-600"
+              >
+                GitHub code
+              </a>
             </li>
 
             <!-- Optional. Only if I want to further build on this later -->
