@@ -1,0 +1,95 @@
+type User {
+  firstName: String!
+  lastName: String!
+  email: String! @unique
+  phone: String
+  status: Status!
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+  PENDING
+}
+
+type Home {
+  property: Property!
+  state: HomeState!
+  price: Int!
+  escrowCompany: ClosingCompany!
+  titleCompany: ClosingCompany!
+  includedItems: [IncludedFeature]
+  excludedItems: [ExcludedFeature]
+}
+
+enum HomeState {
+  ACTIVE
+  SOLD
+  PENDING
+  PRESALE
+}
+
+type Property {
+  address: Address!
+  propertyType: PropertyType!
+  squareFeet: Int!
+  numberBedrooms: Int!
+  numberBaths: Int!
+  description: String
+  primaryOwner: User!
+  ownerType: OwnerType!
+  primaryImageUrl: String!
+}
+
+enum PropertyType {
+  SINGLE_FAMILY_HOME
+  TOWNHOME
+  BUNGALOW
+  RANCH
+  CONDO
+  OTHER
+}
+
+type Address {
+  addressLine1: String!
+  addressLine2: String
+  city: String!
+  state: String!
+  zip: String!
+}
+
+enum OwnerType {
+  INDIVIDUAL
+  COMPANY
+}
+
+type ClosingCompany {
+  name: String!
+  phone: String
+  email: String
+  officerName: String!
+  address: Address!
+  type: ClosingCompanyType!
+}
+
+enum ClosingCompanyType {
+  ESCROW
+  TITLE
+}
+
+type ListingAgent {
+  user: User!
+  licenseNumber: String!
+  licenseState: String!
+  status: Status!
+}
+
+type ExcludedFeature {
+  listing: Home
+  name: String!
+}
+
+type IncludedFeature {
+  listing: Home
+  name: String!
+}
