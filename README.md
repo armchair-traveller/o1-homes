@@ -1,6 +1,6 @@
 # o1 - the housing app
 
-This is for the mock frontend branch of the housing app. Only frontend is done and mock data is used.
+This is for the mock frontend branch of the housing app. Only frontend is done and mock data is used. It's fully responsive and works on mobile devices.
 
 **WIP** STILL SCALING OUT APP. But doc-driven dev will be the way to go
 
@@ -8,6 +8,7 @@ This is for the mock frontend branch of the housing app. Only frontend is done a
 
 ## App Architecture
 
+- App is built with JAM stack methodology. This means that the app is a static site that is generated at build time and served from a CDN. It is decoupled from the backend and the backend only serves as an API.
 - Components belonging to a page will be placed in the same folder in `src/routes`
 - Pages are `+page.svelte` (this is how it works in Kit)
 - Shared components are in `src/lib/components`

@@ -54,6 +54,14 @@
         the (id) is for keying the item -->
       {#each filteredHomes as { id, price, property: { address: { city }, numberBedrooms: bedrooms, primaryImageUrl: src, description: alt } } (id)}
         <ListingItem href="/home/{id}" {price} {city} {bedrooms} {src} {alt} />
+        <!-- Fallback if no items to display -->
+      {:else}
+        <div class="text-center py-16 px-4 sm:px-6 lg:px-8">
+          <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">No homes found</h1>
+          <p class="mt-4 max-w-xl mx-auto text-base text-gray-500">
+            We couldn't find any homes matching your criteria.
+          </p>
+        </div>
       {/each}
     </ListingGrid>
   </main>

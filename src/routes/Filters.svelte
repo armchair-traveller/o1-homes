@@ -146,7 +146,7 @@
                 name="max-price"
                 id="max-price"
                 class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-4 sm:text-sm border-gray-300 rounded-md rounded-l-none"
-                placeholder="0"
+                placeholder="1000000"
                 aria-describedby="price-currency"
               />
             </div>
