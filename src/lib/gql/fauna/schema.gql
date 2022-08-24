@@ -18,6 +18,7 @@ type Home {
   price: Int!
   escrowCompany: ClosingCompany!
   titleCompany: ClosingCompany!
+  listingAgent: ListingAgent!
   includedItems: [IncludedFeature]
   excludedItems: [ExcludedFeature]
 }
@@ -79,7 +80,7 @@ enum ClosingCompanyType {
 
 type ListingAgent {
   user: User!
-  licenseNumber: String!
+  licenseNumber: ID!
   licenseState: String!
   status: Status!
 }
