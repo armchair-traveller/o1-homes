@@ -19,8 +19,8 @@ type Home {
   escrowCompany: ClosingCompany!
   titleCompany: ClosingCompany!
   listingAgent: ListingAgent!
-  includedItems: [IncludedFeature]
-  excludedItems: [ExcludedFeature]
+  includedItems: [IncludedFeature] @relation
+  excludedItems: [ExcludedFeature] @relation
 }
 
 enum HomeState {
