@@ -1,0 +1,85 @@
+# Example mutation for seeding the database
+# Just do a bunch of createHome calls within `mutation` to create multiple at once.
+mutation SeedData {
+  createHome(
+    data: {
+      property: {
+        create: {
+          address: {
+            create: {
+              addressLine1: "1234 7 St"
+              city: "San Diego"
+              state: "California"
+              zip: "92103"
+            }
+          }
+          propertyType: SINGLE_FAMILY_HOME
+          squareFeet: 2000
+          numberBedrooms: 4
+          numberBaths: 3
+          description: "Beautiful country home"
+          primaryOwner: {
+            create: {
+              firstName: "Lokesh"
+              lastName: "Gupta"
+              email: "abc@gmail.com"
+              status: ACTIVE
+            }
+          }
+          ownerType: INDIVIDUAL
+          primaryImageUrl: "https://d1xpwittheih7o.cloudfront.net/images/67/CaminitoDePizza.jpg"
+        }
+      }
+      state: PENDING
+      price: 649999
+      escrowCompany: {
+        create: {
+          name: "Escrow America"
+          officerName: "John Doe"
+          type: ESCROW
+          address: {
+            create: {
+              addressLine1: "500 1st St"
+              city: "Chula Vista"
+              state: "California"
+              zip: "91910"
+            }
+          }
+        }
+      }
+      titleCompany: {
+        create: {
+          name: "First American Title"
+          officerName: "George Washington"
+          type: TITLE
+          address: {
+            create: {
+              addressLine1: "503 1st St"
+              city: "Chula Vista"
+              state: "California"
+              zip: "91910"
+            }
+          }
+        }
+      }
+      listingAgent: {
+        create: {
+          licenseNumber: "123456789"
+          licenseState: "California"
+          status: ACTIVE
+          user: {
+            create: {
+              firstName: "Deja"
+              lastName: "Vu"
+              email: "xyz@email.com"
+              status: ACTIVE
+            }
+          }
+        }
+      }
+      includedItems: { create: [{ name: "dishwasher" }] }
+    }
+  ) {
+    _id
+  }
+}
