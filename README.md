@@ -1,4 +1,4 @@
-# o1 - the housing app
+# [O1 - The Housing App](https://o1homes.netlify.app/)
 
 This is for the mock frontend branch of the housing app. Only frontend is done and mock data is used. It's fully responsive and works on mobile devices.
 
