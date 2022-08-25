@@ -52,14 +52,15 @@ I opted not to because according to the scenario it is an MVP and when you're ti
 
 ## How would I extend this?
 
-While the requirements were an MVP, it is decoupled. Building on top of this base wouldn't be an issue, as there weren't any major shortcuts taken. However, a few things I would work on if I had more time and I knew I would be able to see it in production:
+While the requirements were an MVP, it is decoupled, globally distributed/consistent, and could handle 10 million users, no sweat. Building on top of this base wouldn't be an issue, as there weren't any major shortcuts taken. However, a few things I would work on if I had more time and I knew I would be able to see it in production:
 
 1. Sentry for error logging/observability
 2. LogRocket for session replay
-3. Possible FaunaDB or PlanetScale+Prisma migration (these all take time, but less so than traditional databases and are built to scale), GraphQL Codegen to automate generating type conveniences with the API (or type checking via JSDoc or TypeScript)
-4. Time travel debugging (likely a session recording one)
-5. Analytics (Google Analytics, Amplitude, Plausible, etc.)
-6. Add more tests (e2e, unit, etc.)
+3. Backend-level autocomplete city search, filter price range, filtering by bedroom. Right now, that's all done on the client-side (but it is fine for an MVP. Just not optimal if dataset is huge).
+4. GraphQL Codegen to automate generating type conveniences with the API (or type checking via JSDoc or TypeScript)
+5. Time travel debugging (likely a session recording one)
+6. Analytics (Google Analytics, Amplitude, Plausible, etc.)
+7. Add more tests (e2e, unit, etc.)
 
 Unless–of course–more critical user features are demanded first. Some of these items are just nice-to-haves. You could think of it as a wishlist and I would prioritize them based on the business needs.
 
@@ -88,8 +89,6 @@ After of which you can preview the production build with `npm run preview`.
 
 ## Seeding data
 
-~~To seed data, fill in your Fauna API key for `const WRITE_KEY` in `scripts/mock/seed.js`. Run `npm run seed`. It uses Node experimental `fetch` so you will need at least v17.5 to run it. It will seed the data (`mock-homes.json`) to the database.~~
+To seed data, fill in your Fauna API key for `const WRITE_KEY` in `scripts/mock/seed.js`. Run `npm run seed`. It uses Node experimental `fetch` so you will need at least v17.5 to run it. It will seed the data (`mock-homes.json`) to the database.
 
-TBD: ~~Gave up on Fauna/GraphQL. The queries are imperative and take too long to write/figure out. And everything needs to be tested to some degree. It's nice that with just that imperativeness you can have a database that could potentially serve 10,000,000 users quite handily and be distributed globally. But it's not worth the time to refresh on how to use it for an MVP. I'll just use a REST API for now. I'll come back to this later.~~
-
-~~Yes. I did switch to an entirely different database that I've never even learned when I hit a predicted dead-end with several potential solutions in one I have experience with. But what can you do? I'm not going to waste time progressing through a solution I know won't make it in time, I'll take the risk with unknowns if the tradeoff is a possible passing breakthrough.~~
+TBD DO NOT READ: Some work has been done in the database for city search autocomplete and range price filtering queries. The queries are imperative and take a while to write/figure out. And everything needs to be tested to some degree (though quick). They aren't worth the time in an MVP, but I started work on them to get the technical groundwork for how it could be extended. Definitely lots of notes in this codebase (and lots of thoughts in my mind) to talk about. I'll come back to this later if it is finished in time.
