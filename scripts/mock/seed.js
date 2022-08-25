@@ -1,5 +1,5 @@
 // seed fauna GraphQL database with mock data
-import { createClient, fetchExchange } from '@urql/svelte'
+import { createClient, fetchExchange, gql } from '@urql/svelte'
 // Note: Mock data was generated using Mockaroo. Might use faker.js in the future if I knew I was going to need to end up
 // writing a Node script beforehand.
 import homes from './mock-homes.json' assert { type: 'json' }
@@ -26,7 +26,7 @@ for (let i = 0; i < homes.length; i += step) {
   //  logic may be refined, b/c I only got 900/1000 homes were written (or a uniqueness constraint error may have happened).
   // But doesn't matter for mock data
   const batch = homes.slice(i, i + step)
-  const query = `
+  const query = gql`
 mutation SeedData {
 ${batch.reduce((acc, home) => acc + homeToMutation(home), '')}
 }`
