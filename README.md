@@ -14,7 +14,7 @@ This is for the mock frontend branch of the housing app. Only frontend is done a
 
 ## Preface/Fundamentals
 
-All of these are covered in docs TODO: Add link to docs. Also see TODO: add link to react hooks in svelte repo
+All of these are covered in docs.
 
 - If you're confused that there's seemingly no `useState`, it's because all variables (`let`/`var`) are reactive by default in Svelte components. This is a huge win for simplicity. TODO: Example link
 - Directives in templates:
@@ -34,14 +34,15 @@ All of these are covered in docs TODO: Add link to docs. Also see TODO: add link
 
 ## Requirements
 
-- [ ] View/browse all available homes
-- [ ] Filter homes by City, Price, Number of Bedrooms
-- [ ] Show detailed view for a selected home
+- [x] View/browse all available homes
+- [x] Filter homes by City, Price, Number of Bedrooms
+- [x] Show detailed view for a selected home
 
 ## Resources
 
 - [Svelte Docs](https://svelte.dev/docs)
 - [Svelte Kit Docs](https://kit.svelte.dev/docs)
+- [React Hooks in Svelte](https://github.com/joshnuss/react-hooks-in-svelte)
 
 ## On testing
 
@@ -61,14 +62,6 @@ While the requirements were an MVP, it is decoupled. Building on top of this bas
 6. Add more tests (e2e, unit, etc.)
 
 Unless–of course–more critical user features are demanded first. Some of these items are just nice-to-haves. You could think of it as a wishlist and I would prioritize them based on the business needs.
-
-## QA checks
-
-Bare minimum:
-
-Extra:
-
-- [ ] Can I see the list of properties?
 
 ## Developing
 
