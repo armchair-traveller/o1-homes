@@ -262,5 +262,797 @@
     },
     "includedItems": [],
     "excludedItems": []
+  },
+  {
+    "id": 1763,
+    "property": {
+      "id": 1,
+      "address": {
+        "id": 1,
+        "addressLine1": "1234 7 St",
+        "addressLine2": null,
+        "city": "San Diego",
+        "state": "California",
+        "zip": "92103"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 2000,
+      "numberBedrooms": 4,
+      "numberBaths": 3,
+      "description": "Beautiful country home",
+      "primaryOwner": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Lokesh",
+          "lastName": "Gupta",
+          "email": "abc@gmail.com",
+          "phone": null,
+          "status": "Active"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__13__RUAriu0ppl.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809023"
+    },
+    "state": "Pending",
+    "price": 649999,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [
+      {
+        "id": 1,
+        "name": "dishwasher",
+        "listing": null
+      }
+    ],
+    "excludedItems": []
+  },
+  {
+    "id": 27678,
+    "property": {
+      "id": 2,
+      "address": {
+        "id": 2,
+        "addressLine1": "555 Highland Ave",
+        "addressLine2": null,
+        "city": "National City",
+        "state": "California",
+        "zip": "91950"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 1200,
+      "numberBedrooms": 3,
+      "numberBaths": 2,
+      "description": "Beautiful city home",
+      "primaryOwner": {
+        "id": 2,
+        "user": {
+          "id": 3,
+          "firstName": "Captain",
+          "lastName": "America",
+          "email": "cap@marvel.com",
+          "phone": null,
+          "status": "Active"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__3__DVVFSauEN.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809010"
+    },
+    "state": "Active",
+    "price": 520000,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [
+      {
+        "id": 2,
+        "name": "dryer",
+        "listing": null
+      }
+    ],
+    "excludedItems": [
+      {
+        "id": 3,
+        "name": "washer",
+        "listing": null
+      }
+    ]
+  },
+  {
+    "id": 3731,
+    "property": {
+      "id": 3,
+      "address": {
+        "id": 3,
+        "addressLine1": "123 E St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 3500,
+      "numberBedrooms": 6,
+      "numberBaths": 5,
+      "description": "Big home with great views",
+      "primaryOwner": {
+        "id": 3,
+        "user": {
+          "id": 4,
+          "firstName": "Tony",
+          "lastName": "Stark",
+          "email": "tony@marvel.com",
+          "phone": null,
+          "status": "Pending"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__5__Xznp6bqQLE.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809020"
+    },
+    "state": "PreSale",
+    "price": 1250000,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [],
+    "excludedItems": []
+  },
+  {
+    "id": 175,
+    "property": {
+      "id": 1,
+      "address": {
+        "id": 1,
+        "addressLine1": "1234 7 St",
+        "addressLine2": null,
+        "city": "San Diego",
+        "state": "California",
+        "zip": "92103"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 2000,
+      "numberBedrooms": 4,
+      "numberBaths": 3,
+      "description": "Beautiful country home",
+      "primaryOwner": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Lokesh",
+          "lastName": "Gupta",
+          "email": "abc@gmail.com",
+          "phone": null,
+          "status": "Active"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download_LjA6-oNpql.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809025"
+    },
+    "state": "Pending",
+    "price": 649999,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [
+      {
+        "id": 1,
+        "name": "dishwasher",
+        "listing": null
+      }
+    ],
+    "excludedItems": []
+  },
+  {
+    "id": 287,
+    "property": {
+      "id": 2,
+      "address": {
+        "id": 2,
+        "addressLine1": "555 Highland Ave",
+        "addressLine2": null,
+        "city": "National City",
+        "state": "California",
+        "zip": "91950"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 1200,
+      "numberBedrooms": 3,
+      "numberBaths": 2,
+      "description": "Beautiful city home",
+      "primaryOwner": {
+        "id": 2,
+        "user": {
+          "id": 3,
+          "firstName": "Captain",
+          "lastName": "America",
+          "email": "cap@marvel.com",
+          "phone": null,
+          "status": "Active"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__9__TM3h4lvDyd.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809030"
+    },
+    "state": "Active",
+    "price": 520000,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [
+      {
+        "id": 2,
+        "name": "dryer",
+        "listing": null
+      }
+    ],
+    "excludedItems": [
+      {
+        "id": 3,
+        "name": "washer",
+        "listing": null
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "property": {
+      "id": 3,
+      "address": {
+        "id": 3,
+        "addressLine1": "123 E St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 3500,
+      "numberBedrooms": 6,
+      "numberBaths": 5,
+      "description": "Big home with great views",
+      "primaryOwner": {
+        "id": 3,
+        "user": {
+          "id": 4,
+          "firstName": "Tony",
+          "lastName": "Stark",
+          "email": "tony@marvel.com",
+          "phone": null,
+          "status": "Pending"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__1__rQyq8n4Ie.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809024"
+    },
+    "state": "PreSale",
+    "price": 1250000,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [],
+    "excludedItems": []
+  },
+  {
+    "id": 17,
+    "property": {
+      "id": 1,
+      "address": {
+        "id": 1,
+        "addressLine1": "1234 7 St",
+        "addressLine2": null,
+        "city": "San Diego",
+        "state": "California",
+        "zip": "92103"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 2000,
+      "numberBedrooms": 4,
+      "numberBaths": 3,
+      "description": "Beautiful country home",
+      "primaryOwner": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Lokesh",
+          "lastName": "Gupta",
+          "email": "abc@gmail.com",
+          "phone": null,
+          "status": "Active"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__7__sRErVGlzcI.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809025"
+    },
+    "state": "Pending",
+    "price": 649999,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [
+      {
+        "id": 1,
+        "name": "dishwasher",
+        "listing": null
+      }
+    ],
+    "excludedItems": []
+  },
+  {
+    "id": 21,
+    "property": {
+      "id": 2,
+      "address": {
+        "id": 2,
+        "addressLine1": "555 Highland Ave",
+        "addressLine2": null,
+        "city": "National City",
+        "state": "California",
+        "zip": "91950"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 1200,
+      "numberBedrooms": 3,
+      "numberBaths": 2,
+      "description": "Beautiful city home",
+      "primaryOwner": {
+        "id": 2,
+        "user": {
+          "id": 3,
+          "firstName": "Captain",
+          "lastName": "America",
+          "email": "cap@marvel.com",
+          "phone": null,
+          "status": "Active"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__2__XroP8soPfk.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809024"
+    },
+    "state": "Active",
+    "price": 520000,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [
+      {
+        "id": 2,
+        "name": "dryer",
+        "listing": null
+      }
+    ],
+    "excludedItems": [
+      {
+        "id": 3,
+        "name": "washer",
+        "listing": null
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "property": {
+      "id": 3,
+      "address": {
+        "id": 3,
+        "addressLine1": "123 E St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "propertyType": "SingleFamilyHome",
+      "squareFeet": 3500,
+      "numberBedrooms": 6,
+      "numberBaths": 5,
+      "description": "Big home with great views",
+      "primaryOwner": {
+        "id": 3,
+        "user": {
+          "id": 4,
+          "firstName": "Tony",
+          "lastName": "Stark",
+          "email": "tony@marvel.com",
+          "phone": null,
+          "status": "Pending"
+        }
+      },
+      "ownerType": "Individual",
+      "primaryImageUrl": "https://ik.imagekit.io/fang/Mock_Penthouse/download__16__o5airNPUk1.jfif?ik-sdk-version=javascript-1.4.3&updatedAt=1661382809025"
+    },
+    "state": "PreSale",
+    "price": 1250000,
+    "escrowCompany": {
+      "id": 1,
+      "name": "Escrow America",
+      "phone": null,
+      "email": null,
+      "officerName": "John Doe",
+      "address": {
+        "id": 4,
+        "addressLine1": "500 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Escrow"
+    },
+    "titleCompany": {
+      "id": 2,
+      "name": "First American Title",
+      "phone": null,
+      "email": null,
+      "officerName": "George Washington",
+      "address": {
+        "id": 5,
+        "addressLine1": "503 1st St",
+        "addressLine2": null,
+        "city": "Chula Vista",
+        "state": "California",
+        "zip": "91910"
+      },
+      "type": "Title"
+    },
+    "listingAgent": {
+      "id": 1,
+      "licenseNumber": "123456789",
+      "licenseState": "California",
+      "user": {
+        "id": 2,
+        "firstName": "Deja",
+        "lastName": "Vu",
+        "email": "xyz@email.com",
+        "phone": null,
+        "status": "Active"
+      },
+      "status": "Active"
+    },
+    "includedItems": [],
+    "excludedItems": []
   }
 ]
