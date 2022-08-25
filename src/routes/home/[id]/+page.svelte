@@ -66,7 +66,8 @@
 
   // Note: Unfortunately destructuring has many more defaults required to make it work since now our data isn't immediately available. There're two approaches to this:
   // 1. take the time to write out all the defaults
-  // 2. make do and have components for the inner data (doesn't shorten the total code)
+  // 2. make do and have components for the inner data (doesn't shorten the total code, but makes it more modular.
+  //    I went with this approach for modularity reasons even though I prefer having it all in one place, provided it's still navigatable.)
 </script>
 
 <svelte:head>
@@ -208,7 +209,7 @@
           </ul>
 
           <div class="mt-10">
-            <!-- There's only a single button here, but if this was used at least 3 times I would refactor into a more 
+            <!-- There's only a single button-like anchor here, but if this was used at least 3 times I would refactor into a more 
             generic component, adding variants as our design guides us -->
             <a
               href="mailto:{home.listingAgent.user.email}"
