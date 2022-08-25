@@ -63,6 +63,10 @@
   $: address = home
     ? `${home?.property.address.addressLine1}, ${home?.property.address.city}, ${home?.property.address.state} ${home?.property.address.zip}`
     : null
+
+  // Note: Unfortunately destructuring has many more defaults required to make it work since now our data isn't immediately available. There're two approaches to this:
+  // 1. take the time to write out all the defaults
+  // 2. make do and have components for the inner data (doesn't shorten the total code)
 </script>
 
 <svelte:head>
