@@ -1,3 +1,6 @@
+// WIP: The backend API isn't complete. This is just PoC code.
+// the goal is an autocomplete search for cities, filter by a city, and then intersect with filtered price range / bedroom results
+
 // To get syntax highlighting, install Fauna extension for VSCode
 // for reference
 Paginate(Range(Match(Index("Home_by_price")), [0], [100000]))
