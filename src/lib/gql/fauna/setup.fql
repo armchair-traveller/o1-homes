@@ -1,3 +1,113 @@
 // To get syntax highlighting, install Fauna extension for VSCode
 // for reference
 Paginate(Range(Match(Index("Home_by_price")), [0], [100000]))
+
+CreateIndex({
+  name: "Home_sorted_by_price",
+  source: Collection("Home"),
+  values: [
+    { field: ["data", "price"] },
+    { field: ["ref"] }
+  ]
+})
+
+// TODO: Example resolver for searching price range
+Update(
+  Function("homesByPrice"),
+  {
+    body: Query(
+      Lambda(
+      ["minPrice", "maxPrice"],
+        Map(
+          Select(
+            ["data"],
+            Paginate(
+              Range(
+                Match(Index("Home_sorted_by_price")),
+                Var("minPrice"),
+                Var("maxPrice")
+              )
+            )
+          ),
+          Lambda(["price", "ref"], Get(Var("ref")))
+        )
+      )
+    )
+  }
+)
+
+// This finds home refs by the city "San Mateo" and when paginated returns as an arr of refs
+// Address by city
+// Property by address ref
+// Home by property ref
+// none of these indexes are included in the auto index so we need to create them
+Paginate(
+  Join(
+    Join(
+      Match(Index("Address_by_city"), "San Mateo"),
+      Index("Property_by_Address_ref")
+    ),
+    Index("Home_by_Property_ref")
+  )
+)
+
+// Searching index for Address cities with ngrams (full text search, exact contains)
+// This might be a bit inefficient given no unique constraint for values (NOT terms) only, but no time to figure that out now
+// Use Distinct with this index to get unique city names. This is for autocomplete search
+CreateIndex({
+  name: 'search_city',
+  // we actually want to sort to get the shortest word that matches first
+  source: [
+    {
+      // If your collections have the same property that you want to access you can pass a list to the collection
+      collection: [Collection('Address')],
+      fields: {
+        searchTerms: Query(
+          Lambda(
+            'Address',
+            Distinct(
+              Union(
+                Let(
+                  {
+                    // TODO: Reduce this array if you want less ngrams per word.
+                    indexes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+                    indexesFiltered: Filter(
+                      Var('indexes'),
+                      // filter out the ones below 0
+                      Lambda('l', GT(Var('l'), 0))
+                    ),
+                    ngramsArray: Map(
+                      Var('indexesFiltered'),
+                      // you can also cleanup the input data by surrounding the Lowercase in a replace
+                      Lambda('l', NGram(LowerCase(Select(['data', 'city'], Var('Address'))), Var('l'), Var('l')))
+                    ),
+                  },
+                  Var('ngramsArray')
+                )
+              )
+            )
+          )
+        ),
+      },
+    },
+  ],
+  terms: [{ binding: 'searchTerms' }],
+  values: [{ field: ['data', 'city'] }],
+})
+
+
+
+// Example query that gives me arr of refs
+Map(
+  Select(
+    ["data"],
+    Paginate(
+      Range(
+        Match(Index("Home_sorted_by_price")),
+        0, // edit w/ price later
+        1000000 // should return only one result, "San Mateo" city
+      )
+    )
+  ),
+  Lambda(["price", "ref"], Var("ref"))
+)

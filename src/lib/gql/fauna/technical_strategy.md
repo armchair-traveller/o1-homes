@@ -6,4 +6,4 @@ It is similar to how the range index was achieved. However, the way to do autoco
 
 Last of all, we need to create an index for the bedrooms. This is also a range index. However, we will use it in a straightforward way until we need 6 or more bedrooms.
 
-And then union the indexes together.
+And then intersect the indexes together.
