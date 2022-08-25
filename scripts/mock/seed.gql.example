@@ -1,5 +1,5 @@
 # Example mutation for seeding the database
-# Just do a bunch of createHome calls within `mutation` to create multiple at once.
+# Just do a bunch of unique alias createHome calls within `mutation` to create multiple at once.
 mutation SeedData {
   createHome(
     data: {
