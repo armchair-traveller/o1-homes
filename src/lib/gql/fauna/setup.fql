@@ -1,4 +1,5 @@
-// WIP: The backend API isn't complete. This is just PoC code.
+// WIP: The stuff in here isn't complete. This is just PoC code for extension and plans. 
+// Some of it is fleshed out, some of it isn't done yet. I'm just putting it here so I can discuss it.
 // the goal is an autocomplete search for cities, filter by a city, and then intersect with filtered price range / bedroom results
 
 // To get syntax highlighting, install Fauna extension for VSCode
@@ -54,9 +55,9 @@ Paginate(
   )
 )
 
+// This is for autocomplete search. Use Distinct with this index to get unique city names.
 // Searching index for Address cities with ngrams (full text search, exact contains)
 // This might be a bit inefficient given no unique constraint for values (NOT terms) only, but no time to figure that out now
-// Use Distinct with this index to get unique city names. This is for autocomplete search
 CreateIndex({
   name: 'search_city',
   // we actually want to sort to get the shortest word that matches first
@@ -98,9 +99,7 @@ CreateIndex({
   values: [{ field: ['data', 'city'] }],
 })
 
-
-
-// Example query that gives me arr of refs
+// Example query that gives an arr of refs
 Map(
   Select(
     ["data"],
@@ -114,3 +113,9 @@ Map(
   ),
   Lambda(["price", "ref"], Var("ref"))
 )
+
+// TODO: Home by bedrooms
+// just a few index joins
+
+
+// TODO: Intersecting the results of the above queries
