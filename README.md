@@ -4,8 +4,6 @@ This is for the mock frontend branch of the housing app. Only frontend is done a
 
 **WIP** STILL SCALING OUT APP. But doc-driven dev will be the way to go
 
-- [ ] TODO Check that colors match brand on all pages including 404 and inputs
-
 ## App Architecture
 
 - App is built with JAM stack methodology. This means that the app is a static site that is generated at build time and served from a CDN. It is decoupled from the backend and the backend only serves as an API.
@@ -91,3 +89,7 @@ npm run build
 After of which you can preview the production build with `npm run preview`.
 
 > This specific app uses static adapter as it is frontend focused. There're fullstack adapters available as well. Check out [the docs](https://kit.svelte.dev/docs/adapters) for more info.
+
+## Seeding data
+
+To seed data, fill in your Fauna API key for `const WRITE_KEY` in `scripts/mock/seed.js`. Run `npm run seed`. It uses Node experimental `fetch` so you will need at least v17.5 to run it. It will seed the data (`mock-homes.json`) to the database.
