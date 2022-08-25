@@ -94,3 +94,7 @@ type IncludedFeature {
   listing: Home
   name: String!
 }
+
+type Query {
+  getAllHomes: [Home]
+}
