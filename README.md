@@ -40,6 +40,9 @@ All of these are covered in docs TODO: Add link to docs. Also see TODO: add link
 
 ## Resources
 
+- [Svelte Docs](https://svelte.dev/docs)
+- [Svelte Kit Docs](https://kit.svelte.dev/docs)
+
 ## On testing
 
 I opted not to because according to the scenario it is an MVP and when you're tight on time for such a simple thing, manual testing scenarios are enough. I'll list some QA checks I did. Plus there is no indication of the critical parts to test for. I would like to add tests if I had more time. I would use Playwright for e2e or [Svelte testing library](https://testing-library.com/docs/svelte-testing-library/intro/) ([React testing library](https://testing-library.com/docs/react-testing-library/intro/) equivalent for Svelte)
@@ -48,11 +51,11 @@ I opted not to because according to the scenario it is an MVP and when you're ti
 
 ## How would I extend this?
 
-While the requirements were an MVP, I built it on a solid foundation that is distributed (performant globally) and scales well (handles 10 million, no sweat) by default. Building on top of this base wouldn't be an issue, as there weren't any major shortcuts taken. However, a few things I would work on if I had more time and I knew I would be able to see it in production:
+While the requirements were an MVP, it is decoupled. Building on top of this base wouldn't be an issue, as there weren't any major shortcuts taken. However, a few things I would work on if I had more time and I knew I would be able to see it in production:
 
 1. Sentry for error logging/observability
 2. LogRocket for session replay
-3. GraphQL Codegen to automate generating type conveniences with the API (or type checking via JSDoc or TypeScript)
+3. Possible FaunaDB or PlanetScale+Prisma migration (these all take time, but less so than traditional databases and are built to scale), GraphQL Codegen to automate generating type conveniences with the API (or type checking via JSDoc or TypeScript)
 4. Time travel debugging (likely a session recording one)
 5. Analytics (Google Analytics, Amplitude, Plausible, etc.)
 6. Add more tests (e2e, unit, etc.)
@@ -92,4 +95,8 @@ After of which you can preview the production build with `npm run preview`.
 
 ## Seeding data
 
-To seed data, fill in your Fauna API key for `const WRITE_KEY` in `scripts/mock/seed.js`. Run `npm run seed`. It uses Node experimental `fetch` so you will need at least v17.5 to run it. It will seed the data (`mock-homes.json`) to the database.
+~~To seed data, fill in your Fauna API key for `const WRITE_KEY` in `scripts/mock/seed.js`. Run `npm run seed`. It uses Node experimental `fetch` so you will need at least v17.5 to run it. It will seed the data (`mock-homes.json`) to the database.~~
+
+TBD: ~~Gave up on Fauna/GraphQL. The queries are imperative and take too long to write/figure out. And everything needs to be tested to some degree. It's nice that with just that imperativeness you can have a database that could potentially serve 10,000,000 users quite handily and be distributed globally. But it's not worth the time to refresh on how to use it for an MVP. I'll just use a REST API for now. I'll come back to this later.~~
+
+~~Yes. I did switch to an entirely different database that I've never even learned when I hit a predicted dead-end with several potential solutions in one I have experience with. But what can you do? I'm not going to waste time progressing through a solution I know won't make it in time, I'll take the risk with unknowns if the tradeoff is a possible passing breakthrough.~~
