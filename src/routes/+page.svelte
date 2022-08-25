@@ -52,13 +52,17 @@
       </p>
     </div>
     <Filters
-      cities={homesData.map(
-        ({
-          property: {
-            address: { city },
-          },
-        }) => city
-      )}
+      cities={[
+        ...new Set(
+          homesData.map(
+            ({
+              property: {
+                address: { city },
+              },
+            }) => city
+          )
+        ),
+      ]}
       on:filter={function applyFilters({ detail: data }) {
         // This is a bit of a hack, searching properties by city would normally be handled by an API call,
         // whether through a database, or a specialized search like Algolia, Elastic, or TypeSense
