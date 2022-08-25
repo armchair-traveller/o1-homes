@@ -25,13 +25,17 @@
       </p>
     </div>
     <Filters
-      cities={homes.map(
-        ({
-          property: {
-            address: { city },
-          },
-        }) => city
-      )}
+      cities={[
+        ...new Set(
+          homes.map(
+            ({
+              property: {
+                address: { city },
+              },
+            }) => city
+          )
+        ),
+      ]}
       on:filter={({ detail: data }) => {
         // This is a bit of a hack, searching properties by city would normally be an API call, but we're fuzzy searching with fuse.js client-side for simplicity
         // But the same could be true with price. Bigger datasets would require a server-side solution.
