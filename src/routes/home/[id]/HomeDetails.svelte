@@ -30,7 +30,6 @@
       ACTIVE: 'is up for sale',
       PRESALE: 'is up for presale',
       PENDING: 'has an offer pending',
-      SOLD: 'has been already sold',
     }
     return `This home ${stateMap[state]}.`
   }
