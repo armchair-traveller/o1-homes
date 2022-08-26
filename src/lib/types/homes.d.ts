@@ -1,4 +1,4 @@
-// TODO unused at the moment. Remove if not needed.
+// TODO unused but generated for reference
 export interface home {
   id: number
   property: Property

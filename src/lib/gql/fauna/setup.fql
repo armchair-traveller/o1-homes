@@ -3,7 +3,7 @@
 // the goal is an autocomplete search for cities, filter by a city, and then intersect with filtered price range / bedroom results
 
 // To get syntax highlighting, install Fauna extension for VSCode
-// for reference
+// for reference, range filtering index documents
 Paginate(Range(Match(Index("Home_by_price")), [0], [100000]))
 
 CreateIndex({
@@ -15,7 +15,7 @@ CreateIndex({
   ]
 })
 
-// TODO: Example resolver for searching price range
+// TODO: Example GraphQL UDF resolver for searching price range
 Update(
   Function("homesByPrice"),
   {
@@ -41,14 +41,15 @@ Update(
 )
 
 // This finds home refs by the city "San Mateo" and when paginated returns as an arr of refs
-// Address by city
-// Property by address ref
-// Home by property ref
+// Address by city index
+// Property by address ref index
+// Home by property ref index
 // none of these indexes are included in the auto index so we need to create them
+// Note: This is confirmed working
 Paginate(
   Join(
     Join(
-      Match(Index("Address_by_city"), "San Mateo"),
+      Match(Index("Address_by_city"), "San Mateo"), // second param should be a Var for city
       Index("Property_by_Address_ref")
     ),
     Index("Home_by_Property_ref")
@@ -56,8 +57,10 @@ Paginate(
 )
 
 // This is for autocomplete search. Use Distinct with this index to get unique city names.
+// - Make sure that you use the first autocomplete result for looking up the city name, for good UX (get homes while typing)
 // Searching index for Address cities with ngrams (full text search, exact contains)
-// This might be a bit inefficient given no unique constraint for values (NOT terms) only, but no time to figure that out now
+// This might be a bit inefficient given no unique constraint for values (NOT terms) only. It's not as simple as turning
+// on unique constraint, as that would prevent you from having multiple addresses with the same city.
 CreateIndex({
   name: 'search_city',
   // we actually want to sort to get the shortest word that matches first
@@ -114,8 +117,11 @@ Map(
   Lambda(["price", "ref"], Var("ref"))
 )
 
-// TODO: Home by bedrooms
-// just a few index joins
+// Note: The below are plans to finish features, they are not complete yet but the implementation is pretty much as
+//       straightforward as described. 
+// TODO: Home by bedrooms index
+// TODO: Range function over index for bedrooms GTE 6
+// TODO: Intersecting the results of the above queries (city, min/max price, bedrooms) to get the final result as a resolver
 
-
-// TODO: Intersecting the results of the above queries
+// Consider: We will need a refs index for each index where we indexing values other than the refs. This is because they
+//           are not able to be intersected in a performant manner otherwise (the alternative is an unperformant Filter).
