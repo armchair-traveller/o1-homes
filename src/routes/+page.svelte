@@ -1,41 +1,51 @@
 <!-- The home page is currently the listing page. -->
 <script>
-  import { getContextClient, queryStore, gql } from '@urql/svelte'
-
+  import { getContextClient, queryStore } from '@urql/svelte'
   import Fuse from 'fuse.js'
   import Filters from './Filters.svelte'
   import ListingGrid from './ListingGrid.svelte'
   import ListingItem from './ListingItem.svelte'
+  import { getAllHomes } from '$lib/gql/getAllHomes'
 
-  // We're querying exactly what we need for this page. If this query is used in multiple places,
-  // we can move it to the gql folder and import it.
   const homesStore = queryStore({
     client: getContextClient(),
-    query: gql`
-      query GetAllHomes {
-        result: getAllHomes {
-          data {
-            _id
-            price
-            property {
-              _id
-              numberBedrooms
-              primaryImageUrl
-              description
-              address {
-                _id
-                city
-              }
-            }
-          }
-        }
-      }
-    `,
+    query: getAllHomes,
   })
 
   $: homesData = $homesStore.data?.result?.data || []
   $: filteredHomes = homesData
   $: fuse = new Fuse(homesData, { keys: ['property.address.city'] })
+  $: uniqueCityNames = [
+    ...new Set(
+      homesData.map(
+        ({
+          property: {
+            address: { city },
+          },
+        }) => city
+      )
+    ),
+  ]
+
+  function handleFilter({ detail: data }) {
+    // This is a bit of a hack, searching properties by city would normally be handled by an API call, whether through
+    // a database, or a specialized search like Algolia, Elastic, or TypeSense but we're fuzzy searching with fuse.js
+    // client-side for simplicity
+    // Bigger datasets would require a server-side solution, and an incomplete implementation with an overview can be
+    // found in src/lib/gql/fauna/setup.fql
+    filteredHomes = (data.city ? fuse.search(data.city).map(({ item }) => item) : homesData).filter(
+      ({ price, property: { numberBedrooms } }) => {
+        if (data.price.min && price < data.price.min) return
+        if (data.price.max && price > data.price.max) return
+        if (
+          data.bedrooms &&
+          ((data.bedrooms >= 6 && numberBedrooms < 6) || numberBedrooms != data.bedrooms)
+        )
+          return
+        return true
+      }
+    )
+  }
 </script>
 
 <svelte:head>
@@ -51,38 +61,7 @@
         experts curates the best properties for you.
       </p>
     </div>
-    <Filters
-      cities={[
-        ...new Set(
-          homesData.map(
-            ({
-              property: {
-                address: { city },
-              },
-            }) => city
-          )
-        ),
-      ]}
-      on:filter={function applyFilters({ detail: data }) {
-        // This is a bit of a hack, searching properties by city would normally be handled by an API call,
-        // whether through a database, or a specialized search like Algolia, Elastic, or TypeSense
-        // but we're fuzzy searching with fuse.js client-side for simplicity
-        // Bigger datasets would require a server-side solution, and an incomplete implementation with an overview
-        // can be found in src/lib/gql/fauna/setup.fql
-        filteredHomes = (
-          data.city ? fuse.search(data.city).map(({ item }) => item) : homesData
-        ).filter(({ price, property: { numberBedrooms } }) => {
-          if (data.price.min && price < data.price.min) return
-          if (data.price.max && price > data.price.max) return
-          if (
-            data.bedrooms &&
-            ((data.bedrooms >= 6 && numberBedrooms < 6) || numberBedrooms != data.bedrooms)
-          )
-            return
-          return true
-        })
-      }}
-    />
+    <Filters cities={uniqueCityNames} on:filter={handleFilter} />
     <ListingGrid>
       {#if $homesStore.fetching}
         <!-- Might be jarring UX if data loads too fast, so a delay could help here. -->
