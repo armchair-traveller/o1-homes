@@ -12,7 +12,7 @@ Create a detailed web app that solves for the following:
 
 - modularity
 - appropriate handling of flow/navigation
-- appropirate handling of data/state
+- appropriate handling of data/state
 
 A sample [data set](./src/homes.json) representing properties has been included to help get you started on what a data model and API call would likely return for the list of active properties. Your solution should include frontend and backend code that solves for the above requirements.
 
