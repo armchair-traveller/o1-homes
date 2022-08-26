@@ -25,7 +25,7 @@
         }) => city
       )
     ),
-  ]
+  ].sort()
 
   function handleFilter({ detail: data }) {
     // This is a bit of a hack, searching properties by city would normally be handled by an API call, whether through
