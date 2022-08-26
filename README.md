@@ -14,6 +14,7 @@ This is a nifty MVP housing app. It's fully responsive and works on mobile devic
 
 All of these are covered in Svelte docs.
 
+- **Reading the code** is easier with highlighting and if you clone the repo with VSCode, install the [Svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) (it's already in the workspace recommendations).
 - If you're confused that there's seemingly no `useState`, it's because all variables (`let`/`var`) are reactive by default in Svelte components. This is a huge win for simplicity. You can read more about it [here](https://svelte.dev/tutorial/reactive-declarations).
 - Directives in templates:
   - `#each` is React's `.map` for rendering multiple items in an array [EXAMPLE](https://github.com/armchair-traveller/o1-homes/blob/2e2f033cc77b5307e52fd5a62f788477a9278909/src/routes/%2Bpage.svelte#L76-L88)
