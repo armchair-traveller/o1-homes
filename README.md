@@ -12,18 +12,18 @@ This is a nifty MVP housing app. It's fully responsive and works on mobile devic
 
 ## Preface/Fundamentals
 
-All of these are covered in docs.
+All of these are covered in Svelte docs.
 
-- If you're confused that there's seemingly no `useState`, it's because all variables (`let`/`var`) are reactive by default in Svelte components. This is a huge win for simplicity. TODO: Example link
+- If you're confused that there's seemingly no `useState`, it's because all variables (`let`/`var`) are reactive by default in Svelte components. This is a huge win for simplicity. You can read more about it [here](https://svelte.dev/tutorial/reactive-declarations).
 - Directives in templates:
-  - `#each` is React's `.map` for rendering multiple items in an array TODO: Example link
-  - `#if` is conditional rendering TODO: Example link
-  - `bind:value` is React's `onChange` for input elements (but two-way data flow. Of course you can use one-way, too. It is just more verbose.) TODO: Example link
-- $: is a reactive statement. It's like `useEffect` in React. TODO: Example link
+  - `#each` is React's `.map` for rendering multiple items in an array [EXAMPLE](https://github.com/armchair-traveller/o1-homes/blob/2e2f033cc77b5307e52fd5a62f788477a9278909/src/routes/%2Bpage.svelte#L76-L88)
+  - `#if` is conditional rendering [EXAMPLE](https://github.com/armchair-traveller/o1-homes/blob/2e2f033cc77b5307e52fd5a62f788477a9278909/src/routes/home/%5Bid%5D/HomeDetails.svelte#L73-L76)
+  - `bind:value` is React's `onChange`/`value` binding to a variable for input elements (but two-way data flow. Of course you can use one-way, too. It is just more verbose.) [EXAMPLE](https://github.com/armchair-traveller/o1-homes/blob/859a9c06b4eced26a4254de4813487d85b8dfb58/src/routes/Filters.svelte#L99-L107)
+- $: is a reactive statement. It's like `useEffect` in React. [EXAMPLE](https://github.com/armchair-traveller/o1-homes/blob/859a9c06b4eced26a4254de4813487d85b8dfb58/src/routes/Filters.svelte#L30-L34)
 
 ## Design methodology
 
-- As this is a frontend development MVP focus, minimal design work was put in. There was no plan but the goal was to make the app look nice enough for consumers (while fitting the brand) and fulfill the requirements.
+- As this is a frontend app with an MVP focus, minimal design work was put in. There was no plan but the goal was to make the app look nice enough for consumers (while fitting the brand) and fulfill the requirements.
 
 **Why isn't all data displayed on any home details page?**
 
@@ -43,7 +43,7 @@ All of these are covered in docs.
 
 **BEYOND MVP: About**
 
-There're a lot of things that can be done to improve the app, even without extending its functionality as per requirements. I did half of the things I wanted to do on the backend, but they're incomplete and never made it in. They were primarily done on the second day (frontend+mock without DB was done by the first, see commits & deploy in frontend-mock branch which only had sparse fixes). `src/lib/gql/fauna/setup.fql` has incomplete/planned work, and none of it was used to setup the database. Only check if you're interested, but better to just let me explain them if you're curious.
+There're a lot of things that can be done to improve the app, even without extending its functionality as per requirements. I did half of the things I wanted to do on the backend, but they're incomplete and never made it in. They were primarily done on the second day (frontend+mock without DB was done by the first, see commits & deploy in frontend-mock branch which only had sparse fixes). `src/lib/gql/fauna/setup.fql` has incomplete/planned work, and none of it was used to setup the database. Only check if you're interested, but better to just let me explain them if you're curious and want to save time.
 
 ## Resources
 
@@ -84,7 +84,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-Note that this project was built on Node 17. While Node 16 will work, it is not recommended as some things may not work as expected (e.g. seed script).
+Note that this project was built on Node v17. While Node v16 will work, it is not recommended as some things may not work as expected (e.g. seed script).
 
 ## Building
 
@@ -104,7 +104,7 @@ The gist of it is: create a [Fauna](https://fauna.com/) database and upload the 
 
 ## Seeding data
 
-To seed data, fill in your Fauna API key for `const WRITE_KEY` in `scripts/mock/seed.js`. Run `npm run seed`. It uses Node experimental `fetch` so you will need at least v17.5 to run it. It will seed the data (`mock-homes.json`) to the database.
+To seed data, fill in your Fauna API key for `const WRITE_KEY` in `scripts/mock/seed.js`. Run `npm run seed`. It uses Node experimental `fetch` so you will need at least v17.5 to run it. It will seed the data in `mock-homes.json` to the database.
 
 ---
 
