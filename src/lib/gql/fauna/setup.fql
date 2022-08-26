@@ -122,6 +122,9 @@ Map(
 // TODO: Home by bedrooms index
 // TODO: Range function over index for bedrooms GTE 6
 // TODO: Intersecting the results of the above queries (city, min/max price, bedrooms) to get the final result as a resolver
+// TODO: Furthermore, implement pagination params for the above queries. Although the above are a challenge enough due to
+//       blank "" values being a possibility to account for. If a serverless function is used, it's possible to write
+//       logic in much less time and in a much more readable manner. However, it does introduce a small latency penalty.
 
 // Consider: We will need a refs index for each index where we indexing values other than the refs. This is because they
 //           are not able to be intersected in a performant manner otherwise (the alternative is an unperformant Filter).
