@@ -5,7 +5,7 @@ import { createClient, fetchExchange, gql } from '@urql/svelte'
 import homes from './mock-homes.json' assert { type: 'json' }
 
 // Could be server, or w/e you want that has write access to Fauna
-const WRITE_KEY = 'YOUR_FAUNA_SERVER_KEY' // TODO: change this to your Fauna key
+const WRITE_KEY = 'YOUR_FAUNA_SERVER_KEY' // TODO: change this to your Fauna key temporarily to seed. DO NOT COMMIT THIS FILE TO GIT
 
 const client = createClient({
   url: 'https://graphql.fauna.com/graphql',
@@ -23,7 +23,7 @@ const promises = []
 console.log('seeding fauna with mock data')
 const step = 100 // how many homes to write at a time. 100 is a good number. 1000 triggered an instance is not unique error
 for (let i = 0; i < homes.length; i += step) {
-  //  logic may be refined, b/c I only got 900/1000 homes were written (or a uniqueness constraint error may have happened).
+  // logic may be refined, b/c I only got 900/1000 homes were written (or a uniqueness constraint error may have happened).
   // But doesn't matter for mock data
   const batch = homes.slice(i, i + step)
   const query = gql`
